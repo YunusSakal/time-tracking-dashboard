@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time Tracking Dashboard</title>
+  <link rel="icon" href="images/favicon-32x32.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sol Panel -->
+    <div class="profile-card">
+      <div class="profile-info">
+        <img src="images/image-jeremy.png" alt="profile">
+        <div>
+          <p class="report-for">Report for</p>
+          <h2>Jeremy Robson</h1>
+        </div>
+      </div>
+      <div class="menu">
+        <p data-period="daily">Daily</p>
+        <p class="active" data-period="weekly">Weekly</p>
+        <p data-period="monthly">Monthly</p>
+      </div>
+    </div>
+
+    <!-- Kartlar  -->
+    <div class="card work">
+      <div class="card-bg">
+        <img src="images/icon-work.svg" alt="">
+      </div>
+      <div class="card-content" data-category="Work">
+        <div class="top">
+          <p>Work</p>
+          <img src="images/icon-ellipsis.svg" alt="..." class="ellipsis">
+        </div>
+        <div class="hours-info">
+          <h2 class="current">32hrs</h2>
+          <p class="last-week">Last Week - 36hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card play">
+      <div class="card-bg">
+        <img src="images/icon-play.svg" alt="">
+      </div>
+      <div class="card-content" data-category="Play">
+        <div class="top">
+          <p>Play</p>
+          <img src="images/icon-ellipsis.svg" alt="..." class="ellipsis">
+        </div>
+        <div class="hours-info">
+          <h2 class="current">10hrs</h2>
+          <p class="last-week">Last Week - 8hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card study">
+      <div class="card-bg">
+        <img src="images/icon-study.svg" alt="">
+      </div>
+      <div class="card-content" data-category="Study">
+        <div class="top">
+          <p>Study</p>
+          <img src="images/icon-ellipsis.svg" alt="..." class="ellipsis">
+        </div>
+        <div class="hours-info">
+          <h2 class="current">4hrs</h2>
+          <p class="last-week">Last Week - 7hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card exercise">
+      <div class="card-bg">
+        <img src="images/icon-exercise.svg" alt="">
+      </div>
+      <div class="card-content" data-category="Exercise">
+        <div class="top">
+          <p>Exercise</p>
+          <img src="images/icon-ellipsis.svg" alt="..." class="ellipsis">
+        </div>
+        <div class="hours-info">
+          <h2 class="current">4hrs</h2>
+          <p class="last-week">Last Week - 5hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card social">
+      <div class="card-bg">
+        <img src="images/icon-social.svg" alt="">
+      </div>
+      <div class="card-content" data-category="Social">
+        <div class="top">
+          <p>Social</p>
+          <img src="images/icon-ellipsis.svg" alt="..." class="ellipsis">
+        </div>
+        <div class="hours-info">
+          <h2 class="current">5hrs</h2>
+          <p class="last-week">Last Week - 10hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card selfcare">
+      <div class="card-bg">
+        <img src="images/icon-self-care.svg" alt="">
+      </div>
+      <div class="card-content" data-category="Self Care">
+        <div class="top">
+          <p>Self Care</p>
+          <img src="images/icon-ellipsis.svg" alt="..." class="ellipsis">
+        </div>
+        <div class="hours-info">
+          <h2 class="current">2hrs</h2>
+          <p class="last-week">Last Week - 2hrs</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
