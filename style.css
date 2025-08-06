@@ -25,6 +25,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   justify-content: space-between;
+  height: calc(2 * 200px + 30px); /* 2 kart + aradaki gap */
 }
 
 /* Açık mor üst kısım */
@@ -52,9 +53,14 @@ body {
 }
 
 .profile-info h2 {
+  display: flex;
+  flex-direction: column; /* Desktopta alt alta */
+  gap: 5px;
   font-size: 30px;
   color: white;
   font-weight: 300;
+  margin: 0;
+  flex-wrap: wrap;
 }
 
 .menu {
@@ -73,9 +79,15 @@ body {
   font-size: 16px;
   text-align: left;
   padding: 0;
+  margin: 6px 0;  /* Satır arası boşluk */
+  line-height: 1.5;
 }
 
 .menu p.active {
+  color: white;
+}
+
+.menu p:hover {
   color: white;
 }
 
@@ -85,7 +97,7 @@ body {
   border-radius: 15px;
   overflow: hidden;
   height: 200px;
-  cursor: pointer; /* Ortak: Tüm kartlarda imleç parmak olsun */
+  cursor: pointer; /* Ortaktır: Tüm kartlarda imleç parmak olsun */
 }
 
 .card-bg {
@@ -140,16 +152,17 @@ body {
   background-color: hsl(235, 40%, 35%);
 }
 
-/* Ellipsis ikonuna özel stil */
 .ellipsis {
   cursor: pointer;
-  filter: brightness(0) invert(1); /* Beyaz yap */
   transition: filter 0.3s ease;
 }
 
-/* Hover durumunda ikon daha parlak beyaz olabilir */
 .ellipsis:hover {
-  filter: brightness(1.2) invert(1);
+  filter: brightness(0) invert(1); /* Beyaz olur */
+}
+
+.card-content:hover:has(.ellipsis:hover) {
+  background-color: hsl(235, 46%, 20%);
 }
 
 .card-content .top {
@@ -181,53 +194,87 @@ body {
   color: hsl(236, 100%, 87%);
 }
 
-/* Mobil görünüm (max 768px) */
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
-    gap: 20px;
     padding: 20px;
+    gap: 20px;
   }
 
   .profile-card {
-    grid-row: auto;
+    height: auto;
   }
 
   .profile-info {
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    min-height: auto;
     padding: 15px;
+    gap: 15px;
   }
 
-  .profile-info h1 {
-    font-size: 18px;
+  .profile-info img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profile-info h2 {
+    font-size: 20px;
+    flex-direction: row; /* Mobilde yan yana */
+    align-items: flex-start;
+  }
+
+  .report-for {
+    font-size: 13px;
   }
 
   .menu {
-    display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    margin-top: 10px;
+    padding: 10px 0;
   }
 
   .menu p {
     font-size: 14px;
+    margin: 0;
   }
 
   .card {
     height: auto;
   }
 
-  .card-content {
-    height: auto;
+  .card-bg {
+    height: 50px;
   }
 
-   .hours-info {
-    flex-direction: row; /* Mobilde yan yana */
+  .card-bg img {
+    width: 40px;
+  }
+
+  .card-content {
+    height: auto;
+    padding: 15px;
+    margin-top: -20px;
+  }
+
+  .card-content .top p {
+    font-size: 14px;
+  }
+
+  .hours-info {
+    flex-direction: row; /* Yatay hizalama */
     align-items: center;
     justify-content: space-between;
+    gap: 10px; /* Saat ve Last Week arası boşluk */
+  }
+
+  .hours-info h2 {
+    font-size: 24px;
   }
 
   .last-week {
     font-size: 13px;
+    white-space: nowrap; /* Tek satırda tut */
   }
 }
